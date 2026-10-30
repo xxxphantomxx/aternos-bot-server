@@ -1,11 +1,17 @@
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Bot is running online 24/7\n');
+}).listen(process.env.PORT || 3000);
+
+
+const mineflayer = require('mineflayer');
 const mineflayer = require('mineflayer');
 
 const botOptions = {
     host: 'phantom_ms.aternos.me', 
     port: 25565,                  
-    username: 'MyMegaBot_99' // Мы дали боту уникальное имя, чтобы не было ошибки "The same username is already playing"
-    // Строку version удалили, чтобы библиотека сама подстроилась под Атернос
-};
+    username: 'bot_servera_phantom_ms' 
 
 function createBot() {
     console.log('Попытка подключения бота к серверу...');
