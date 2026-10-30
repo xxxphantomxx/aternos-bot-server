@@ -3,8 +3,8 @@ const mineflayer = require('mineflayer');
 const botOptions = {
     host: 'phantom_ms.aternos.me', 
     port: 25565,                  
-    username: 'bot',    
-    version: '1.21.11'             
+    username: 'MyMegaBot_99' // Мы дали боту уникальное имя, чтобы не было ошибки "The same username is already playing"
+    // Строку version удалили, чтобы библиотека сама подстроилась под Атернос
 };
 
 function createBot() {
@@ -21,10 +21,16 @@ function createBot() {
         }, 10000);
     });
 
+
     bot.on('chat', (username, message) => {
-        // if (message.includes('/register')) bot.chat('/register пароль пароль');
-        // if (message.includes('/login')) bot.chat('/login пароль');
+        if (message.includes('/register')) {
+            bot.chat('/register Phantom_Bot77 Phantom_Bot77'); 
+        }
+        if (message.includes('/login')) {
+            bot.chat('/login Phantom_Bot77'); 
+        }
     });
+
 
     bot.on('kick', (reason) => {
         console.log(`Бота кикнули: ${reason}`);
